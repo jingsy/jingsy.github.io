@@ -1090,7 +1090,7 @@ pre .javascript .function {
   bottom: 19px;
 }
 .header {
-  background: url("https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=548790517,3739018351&fm=26&gp=0.jpg") no-repeat;
+  background: url("../../../../images/bgg.jpeg") no-repeat 0px -80px;
 }
 .header-inner {
   position: relative;
@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffbd14;
+  background: #ff7526;
 }
 .links-of-blogroll {
   font-size: 13px;
