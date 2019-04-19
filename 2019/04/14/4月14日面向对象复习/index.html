@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="4月14日面向对象复习"><meta name="keywords" content="前端,JavaScript"><meta name="author" content="Shuyan Jing"><meta name="copyright" content="Shuyan Jing"><title>4月14日面向对象复习 | 拉斐尔</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#面向对象复习"><span class="toc-number">1.</span> <span class="toc-text">面向对象复习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是面向对象"><span class="toc-number">1.1.</span> <span class="toc-text">什么是面向对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象三大特性"><span class="toc-number">1.2.</span> <span class="toc-text">面向对象三大特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么对象"><span class="toc-number">1.3.</span> <span class="toc-text">什么对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是js对象"><span class="toc-number">1.4.</span> <span class="toc-text">什么是js对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#名词提炼"><span class="toc-number">1.5.</span> <span class="toc-text">名词提炼</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何用js模拟对象"><span class="toc-number">1.6.</span> <span class="toc-text">如何用js模拟对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建对象的方式"><span class="toc-number">1.7.</span> <span class="toc-text">创建对象的方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传统构造函数存在的问题"><span class="toc-number">1.8.</span> <span class="toc-text">传统构造函数存在的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是原型"><span class="toc-number">1.9.</span> <span class="toc-text">什么是原型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原型的使用方式（实现原型继承的方式）"><span class="toc-number">1.10.</span> <span class="toc-text">原型的使用方式（实现原型继承的方式）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原型链"><span class="toc-number">1.11.</span> <span class="toc-text">原型链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承实现方式"><span class="toc-number">1.12.</span> <span class="toc-text">继承实现方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-prototype的成员"><span class="toc-number">1.13.</span> <span class="toc-text">Object.prototype的成员</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Function-eval"><span class="toc-number">1.14.</span> <span class="toc-text">Function eval</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#arguments对象"><span class="toc-number">1.15.</span> <span class="toc-text">arguments对象</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">Shuyan Jing</div><div class="author-info__description text-center">自学前端的小白 弟中弟</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">9</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">7</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">6</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">拉斐尔</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">4月14日面向对象复习</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-04-14</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/前端/">前端</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="面向对象复习"><a href="#面向对象复习" class="headerlink" title="面向对象复习"></a>面向对象复习</h1><h2 id="什么是面向对象"><a href="#什么是面向对象" class="headerlink" title="什么是面向对象"></a>什么是面向对象</h2><pre><code>面向对象是一种编程思想
+    把解决问题的关注点放到解决问题所需要的过程
+面向过程是一种思想
+    把解决问题的关注点放到解决问题所需要的每一个步骤上
+</code></pre><h2 id="面向对象三大特性"><a href="#面向对象三大特性" class="headerlink" title="面向对象三大特性"></a>面向对象三大特性</h2><pre><code>1.封装
+2.继承
+3.多态
+</code></pre><h2 id="什么对象"><a href="#什么对象" class="headerlink" title="什么对象"></a>什么对象</h2><pre><code>万物皆对象
+</code></pre><h2 id="什么是js对象"><a href="#什么是js对象" class="headerlink" title="什么是js对象"></a>什么是js对象</h2><pre><code>键值对的集合（无序）
+</code></pre><h2 id="名词提炼"><a href="#名词提炼" class="headerlink" title="名词提炼"></a>名词提炼</h2><pre><code>一句话的所有名词都可以当作对象
+</code></pre><h2 id="如何用js模拟对象"><a href="#如何用js模拟对象" class="headerlink" title="如何用js模拟对象"></a>如何用js模拟对象</h2><pre><code>属性对应特征
+方法对应行为
+</code></pre><h2 id="创建对象的方式"><a href="#创建对象的方式" class="headerlink" title="创建对象的方式"></a>创建对象的方式</h2><pre><code>1.使用对象字面量
+2.使用内置的构造函数Object
+3.使用简单工厂函数（不推荐）
+4.自定义构造函数
+</code></pre><h2 id="传统构造函数存在的问题"><a href="#传统构造函数存在的问题" class="headerlink" title="传统构造函数存在的问题"></a>传统构造函数存在的问题</h2><pre><code>如果把方法定义在函数中，每创建一个对象，都会新创建一个方法，这样会造成资源浪费
+
+如何解决问题？
+1.把方法提取出来定义在全局，在构造函数中引用该方法
+2.使用原型来解决
+    原型中的所有成员都可以被跟其所有关联的对象所访问
+</code></pre><h2 id="什么是原型"><a href="#什么是原型" class="headerlink" title="什么是原型"></a>什么是原型</h2><pre><code>1.构造函数创建的时候，系统会默认的为这个构造函数创建并且关联一个对象————这个对象就是原型对象
+
+2.这个原型对象默认是一个空的对象，可以被所有该构造函数所实例化出来的对象所访问
+</code></pre><h2 id="原型的使用方式（实现原型继承的方式）"><a href="#原型的使用方式（实现原型继承的方式）" class="headerlink" title="原型的使用方式（实现原型继承的方式）"></a>原型的使用方式（实现原型继承的方式）</h2><pre><code>1.利用对象的动态特性给原型对象添加成员
+
+2.直接替换原型对象
+
+3.通过混入的方式给原型对象添加成员
+</code></pre><h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><pre><code>每个构造函数都有原型对象，每一个原型对象都有构造函数，这样就形成了一个链式结构
+</code></pre><h2 id="继承实现方式"><a href="#继承实现方式" class="headerlink" title="继承实现方式"></a>继承实现方式</h2><pre><code>1.混入式继承 for in
+2.原型继承 
+    通过更改原型链的结构实现的继承
+
+3.经典继承 Object.create() 有兼容性问题
+// var 对象名 = Object.create(要继承的对象);
+</code></pre><h2 id="Object-prototype的成员"><a href="#Object-prototype的成员" class="headerlink" title="Object.prototype的成员"></a>Object.prototype的成员</h2><pre><code>constructor 属性 指向该原型相关的构造函数
+
+hasOwnProperty 方法 判断对象本身是否拥有某个属性
+
+isPrototypeOf 方法 判断一个对象是不是另一个对象的原型对象
+
+propertyIsEnumerable 方法 先判断属性是否属于对象本身 如果是 就继续判断属性是否可以被遍历 如果不是 返回 false 如果是 返回true
+
+toString toLocaleString 方法     转换成字符串
+toLocaleString转换为本地格式的字符串                   
+valueOf 方法 当对象参加运算的时候 会首先调用valueOf方法获取对象的值，如果获取的值不能参与运算 则调用toString方法
+
+__proto__ 属性 指向对象关联的原型对象
+</code></pre><h2 id="Function-eval"><a href="#Function-eval" class="headerlink" title="Function eval"></a>Function eval</h2><pre><code>都可以将字符串转换为代码
+不同点：
+    Function创建出来的是函数 不会直接调用 除非手动调用
+
+    eval直接可以将字符串转换为代码并执行
+</code></pre><h2 id="arguments对象"><a href="#arguments对象" class="headerlink" title="arguments对象"></a>arguments对象</h2><pre><code>函数内部的一个对象，在函数调用的时候，系统会默认的将所有实参存入这个对象
+arguments.length 长度
+arguments.callee 指向当前函数
+</code></pre></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Shuyan Jing</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://jingshuyan.com/2019/04/14/4月14日面向对象复习/">https://jingshuyan.com/2019/04/14/4月14日面向对象复习/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://jingshuyan.com">拉斐尔</a>！</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/前端/">前端</a><a class="post-meta__tags" href="/tags/JavaScript/">JavaScript</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2019/04/16/4月16日nodejs/"><i class="fa fa-chevron-left">  </i><span>4月16日nodejs(一)</span></a></div><div class="next-post pull-right"><a href="/2019/04/14/4月14日下午/"><span>4月14日下午js学习总结</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2019 By Shuyan Jing</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script></body></html>
