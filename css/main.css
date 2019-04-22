@@ -2062,7 +2062,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ba9c00;
+  background: #41fff2;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3383,11 +3383,11 @@ img:hover {
   transition: all 0.6s !important;
 }
 .header-inner:hover {
-  -webkit-transform: scale(1.1) !important;
-  -moz-transform: scale(1.1) !important;
-  -ms-transform: scale(1.1) !important;
-  -o-transform: scale(1.1) !important;
-  transform: scale(1.1) !important;
+  -webkit-transform: scale(1.03) !important;
+  -moz-transform: scale(1.03) !important;
+  -ms-transform: scale(1.03) !important;
+  -o-transform: scale(1.03) !important;
+  transform: scale(1.03) !important;
   -webkit-transform: translateX(-40px) !important;
   -moz-transform: translateX(-40px) !important;
   -ms-transform: translateX(-40px) !important;
@@ -3399,11 +3399,11 @@ img:hover {
   transition: all 0.6s !important;
 }
 .sidebar-inner:hover {
-  -webkit-transform: scale(1.1) !important;
-  -moz-transform: scale(1.1) !important;
-  -ms-transform: scale(1.1) !important;
-  -o-transform: scale(1.1) !important;
-  transform: scale(1.1) !important;
+  -webkit-transform: scale(1.03) !important;
+  -moz-transform: scale(1.03) !important;
+  -ms-transform: scale(1.03) !important;
+  -o-transform: scale(1.03) !important;
+  transform: scale(1.03) !important;
   -webkit-transform: translateX(-40px) !important;
   -moz-transform: translateX(-40px) !important;
   -ms-transform: translateX(-40px) !important;
