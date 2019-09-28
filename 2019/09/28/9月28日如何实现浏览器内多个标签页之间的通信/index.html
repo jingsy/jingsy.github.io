@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="前端,面试题,">
+  <meta name="keywords" content="浏览器通信,">
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="面试题每日积累052CSS不同选择器的权重(CSS层叠的规则)！important规则最重要，大于其它规则行内样式规则，加1000对于选择器中给定的各个ID属性值，加100对于选择器中给定的各个类属性、属性选择器或者伪类选择器，加10对于选择其中给定的各个元素标签选择器，加1如果权值一样，则按照样式规则的先后顺序来应用，顺序靠后的覆盖靠前的规则 053列出你所知道可以改变页面布局的属性positi">
-<meta name="keywords" content="前端,面试题">
+<meta name="description" content="sessionStorage 存储的数据仅在本次会话有用，会话结束后会自动失效，而且数据仅在当前窗口有效，同一源下新窗口也访问不到其他窗口基于sessionStorage 存储的数据。也是由于这些特性，导致 sessionStorage 的使用场景会比较少。 localStorage 可以永久存储，而且同源下数据多窗口也能共享，。看起来很美好，但 localStorage 也有短板，绝大多数浏览器">
+<meta name="keywords" content="浏览器通信">
 <meta property="og:type" content="article">
-<meta property="og:title" content="5月4日前端知识每日积累">
-<meta property="og:url" content="https://jingshuyan.com/2019/05/04/5月4日前端知识每日积累/index.html">
+<meta property="og:title" content="如何实现浏览器内多个标签页之间的通信？">
+<meta property="og:url" content="https://jingshuyan.com/2019/09/28/9月28日如何实现浏览器内多个标签页之间的通信/index.html">
 <meta property="og:site_name" content="拉斐尔">
-<meta property="og:description" content="面试题每日积累052CSS不同选择器的权重(CSS层叠的规则)！important规则最重要，大于其它规则行内样式规则，加1000对于选择器中给定的各个ID属性值，加100对于选择器中给定的各个类属性、属性选择器或者伪类选择器，加10对于选择其中给定的各个元素标签选择器，加1如果权值一样，则按照样式规则的先后顺序来应用，顺序靠后的覆盖靠前的规则 053列出你所知道可以改变页面布局的属性positi">
+<meta property="og:description" content="sessionStorage 存储的数据仅在本次会话有用，会话结束后会自动失效，而且数据仅在当前窗口有效，同一源下新窗口也访问不到其他窗口基于sessionStorage 存储的数据。也是由于这些特性，导致 sessionStorage 的使用场景会比较少。 localStorage 可以永久存储，而且同源下数据多窗口也能共享，。看起来很美好，但 localStorage 也有短板，绝大多数浏览器">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-04T11:01:29.544Z">
+<meta property="og:updated_time" content="2019-09-28T10:59:13.500Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="5月4日前端知识每日积累">
-<meta name="twitter:description" content="面试题每日积累052CSS不同选择器的权重(CSS层叠的规则)！important规则最重要，大于其它规则行内样式规则，加1000对于选择器中给定的各个ID属性值，加100对于选择器中给定的各个类属性、属性选择器或者伪类选择器，加10对于选择其中给定的各个元素标签选择器，加1如果权值一样，则按照样式规则的先后顺序来应用，顺序靠后的覆盖靠前的规则 053列出你所知道可以改变页面布局的属性positi">
+<meta name="twitter:title" content="如何实现浏览器内多个标签页之间的通信？">
+<meta name="twitter:description" content="sessionStorage 存储的数据仅在本次会话有用，会话结束后会自动失效，而且数据仅在当前窗口有效，同一源下新窗口也访问不到其他窗口基于sessionStorage 存储的数据。也是由于这些特性，导致 sessionStorage 的使用场景会比较少。 localStorage 可以永久存储，而且同源下数据多窗口也能共享，。看起来很美好，但 localStorage 也有短板，绝大多数浏览器">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://jingshuyan.com/2019/05/04/5月4日前端知识每日积累/">
+  <link rel="canonical" href="https://jingshuyan.com/2019/09/28/9月28日如何实现浏览器内多个标签页之间的通信/">
 
 
 
 
 
-  <title>5月4日前端知识每日积累 | 拉斐尔</title>
+  <title>如何实现浏览器内多个标签页之间的通信？ | 拉斐尔</title>
   
 
 
@@ -280,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://jingshuyan.com/2019/05/04/5月4日前端知识每日积累/">
+    <link itemprop="mainEntityOfPage" href="https://jingshuyan.com/2019/09/28/9月28日如何实现浏览器内多个标签页之间的通信/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shuyan Jing">
@@ -297,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">5月4日前端知识每日积累</h1>
+          <h1 class="post-title" itemprop="name headline">如何实现浏览器内多个标签页之间的通信？</h1>
         
 
         <div class="post-meta">
@@ -309,8 +309,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-04T20:56:00+10:00">
-                2019-05-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-28T20:25:16+10:00">
+                2019-09-28
               </time>
             
 
@@ -325,8 +325,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-05-04T21:01:29+10:00">
-                2019-05-04
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-28T20:59:13+10:00">
+                2019-09-28
               </time>
             
           </span>
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  348
+                  472
                 </span>
               
 
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -417,13 +417,12 @@
       
 
       
-        <h1 id="面试题每日积累"><a href="#面试题每日积累" class="headerlink" title="面试题每日积累"></a>面试题每日积累</h1><h2 id="052"><a href="#052" class="headerlink" title="052"></a>052</h2><h2 id="CSS不同选择器的权重-CSS层叠的规则"><a href="#CSS不同选择器的权重-CSS层叠的规则" class="headerlink" title="CSS不同选择器的权重(CSS层叠的规则)"></a>CSS不同选择器的权重(CSS层叠的规则)</h2><p>！important规则最重要，大于其它规则<br>行内样式规则，加1000<br>对于选择器中给定的各个ID属性值，加100<br>对于选择器中给定的各个类属性、属性选择器或者伪类选择器，加10<br>对于选择其中给定的各个元素标签选择器，加1<br>如果权值一样，则按照样式规则的先后顺序来应用，顺序靠后的覆盖靠前的规则</p>
-<h2 id="053"><a href="#053" class="headerlink" title="053"></a>053</h2><h2 id="列出你所知道可以改变页面布局的属性"><a href="#列出你所知道可以改变页面布局的属性" class="headerlink" title="列出你所知道可以改变页面布局的属性"></a>列出你所知道可以改变页面布局的属性</h2><p>position、display、float、width、height、margin、padding、top、left、right、</p>
-<h2 id="054"><a href="#054" class="headerlink" title="054"></a>054</h2><h2 id="CSS在性能优化方面的实践"><a href="#CSS在性能优化方面的实践" class="headerlink" title="CSS在性能优化方面的实践"></a>CSS在性能优化方面的实践</h2><p>css压缩与合并、Gzip压缩<br>css文件放在head里、不要用@import<br>尽量用缩写、避免用滤镜、合理使用选择器</p>
-<h2 id="055"><a href="#055" class="headerlink" title="055"></a>055</h2><h2 id="CSS3动画（简单动画的实现，如旋转等）"><a href="#CSS3动画（简单动画的实现，如旋转等）" class="headerlink" title="CSS3动画（简单动画的实现，如旋转等）"></a>CSS3动画（简单动画的实现，如旋转等）</h2><p>依靠CSS3中提出的三个属性：transition、transform、animation<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transition：定义了元素在变化过程中是怎么样的，包含transition-property、transition-duration、transition-timing-function、transition-delay。</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transform：定义元素的变化结果，包含rotate、scale、skew、translate。</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">animation：动画定义了动作的每一帧（@keyframes）有什么效果，包括animation-name，animation-duration、animation-timing-function、animation-delay、animation-iteration-count、animation-direction</span><br></pre></td></tr></table></figure>
-<h2 id="056"><a href="#056" class="headerlink" title="056"></a>056</h2><h2 id="base64的原理及优缺点"><a href="#base64的原理及优缺点" class="headerlink" title="base64的原理及优缺点"></a>base64的原理及优缺点</h2><p>优点可以加密，减少了HTTTP请求<br>缺点是需要消耗CPU进行编解码</p>
+        <p>sessionStorage 存储的数据仅在本次会话有用，会话结束后会自动失效，而且数据仅在当前窗口有效，同一源下新窗口也访问不到其他窗口基于<br>sessionStorage 存储的数据。也是由于这些特性，导致 sessionStorage 的使用场景会比较少。</p>
+<p>localStorage 可以永久存储，而且同源下数据多窗口也能共享，。看起来很美好，但 localStorage 也有短板，绝大多数浏览器有 5M 的大小限制。但是这不足以成为大家使用 localStorage 的障碍，要知道 Cookie 只有 4K 的大小，多了一千多倍，偷着乐吧</p>
+<h1 id="第一种——调用localStorage"><a href="#第一种——调用localStorage" class="headerlink" title="第一种——调用localStorage"></a>第一种——调用localStorage</h1><h2 id="在一个标签页里面使用-localStorage-setItem-key-value-添加（修改、删除）内容；在另一个标签页里面监听-storage-事件。即可得到-localstorge-存储的值，实现不同标签页之间的通信。"><a href="#在一个标签页里面使用-localStorage-setItem-key-value-添加（修改、删除）内容；在另一个标签页里面监听-storage-事件。即可得到-localstorge-存储的值，实现不同标签页之间的通信。" class="headerlink" title="在一个标签页里面使用 localStorage.setItem(key,value)添加（修改、删除）内容；在另一个标签页里面监听 storage 事件。即可得到 localstorge 存储的值，实现不同标签页之间的通信。"></a>在一个标签页里面使用 localStorage.setItem(key,value)添加（修改、删除）内容；在另一个标签页里面监听 storage 事件。即可得到 localstorge 存储的值，实现不同标签页之间的通信。</h2><p>如：save.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;input id=&quot;name&quot;&gt;  </span><br><span class="line">&lt;input type=&quot;button&quot; id=&quot;btn&quot; value=&quot;提交&quot;&gt;  </span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;  </span><br><span class="line">    $(function()&#123;    </span><br><span class="line">        $(&quot;#btn&quot;).click(function()&#123;    </span><br><span class="line">            var name=$(&quot;#name&quot;).val();    </span><br><span class="line">            localStorage.setItem(&quot;name&quot;, name);   </span><br><span class="line">        &#125;);    </span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>show.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;  </span><br><span class="line">    $(function()&#123;   </span><br><span class="line">        window.addEventListener(&quot;storage&quot;, function(event)&#123;    </span><br><span class="line">            console.log(event.key + &quot;=&quot; + event.newValue);    </span><br><span class="line">        &#125;);     </span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></p>
+<h1 id="第二种——调用cookie-setInterval"><a href="#第二种——调用cookie-setInterval" class="headerlink" title="第二种——调用cookie+setInterval()"></a>第二种——调用cookie+setInterval()</h1><h2 id="将要传递的信息存储在cookie中，每隔一定时间读取cookie信息，即可随时获取要传递的信息。"><a href="#将要传递的信息存储在cookie中，每隔一定时间读取cookie信息，即可随时获取要传递的信息。" class="headerlink" title="将要传递的信息存储在cookie中，每隔一定时间读取cookie信息，即可随时获取要传递的信息。"></a>将要传递的信息存储在cookie中，每隔一定时间读取cookie信息，即可随时获取要传递的信息。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;input id=&quot;name&quot;&gt;  </span><br><span class="line">&lt;input type=&quot;button&quot; id=&quot;btn&quot; value=&quot;提交&quot;&gt;  </span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;  </span><br><span class="line">    $(function()&#123;    </span><br><span class="line">        $(&quot;#btn&quot;).click(function()&#123;    </span><br><span class="line">            var name=$(&quot;#name&quot;).val();    </span><br><span class="line">            document.cookie=&quot;name=&quot;+name;    </span><br><span class="line">        &#125;);    </span><br><span class="line">    &#125;);    </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;  </span><br><span class="line">    $(function()&#123;   </span><br><span class="line">        function getCookie(key) &#123;    </span><br><span class="line">            return JSON.parse(&quot;&#123;\&quot;&quot; + document.cookie.replace(/;\s+/gim,&quot;\&quot;,\&quot;&quot;).replace(/=/gim, &quot;\&quot;:\&quot;&quot;) + &quot;\&quot;&#125;&quot;)[key];    </span><br><span class="line">        &#125;     </span><br><span class="line">        setInterval(function()&#123;    </span><br><span class="line">            console.log(&quot;name=&quot; + getCookie(&quot;name&quot;));    </span><br><span class="line">        &#125;, 10000);    </span><br><span class="line">    &#125;);  </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -485,7 +484,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://jingshuyan.com/2019/05/04/5月4日前端知识每日积累/" title="5月4日前端知识每日积累">https://jingshuyan.com/2019/05/04/5月4日前端知识每日积累/</a>
+    <a href="https://jingshuyan.com/2019/09/28/9月28日如何实现浏览器内多个标签页之间的通信/" title="如何实现浏览器内多个标签页之间的通信？">https://jingshuyan.com/2019/09/28/9月28日如何实现浏览器内多个标签页之间的通信/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -500,9 +499,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端/" rel="tag"># 前端</a>
-          
-            <a href="/tags/面试题/" rel="tag"># 面试题</a>
+            <a href="/tags/浏览器通信/" rel="tag"># 浏览器通信</a>
           
         </div>
       
@@ -515,8 +512,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/01/5月1日前端知识每日积累/" rel="next" title="5月1日前端知识每日积累">
-                <i class="fa fa-chevron-left"></i> 5月1日前端知识每日积累
+              <a href="/2019/09/17/9月17日Object 和 Funtion 什么关系/" rel="next" title="js 原型的问题 Object 和 Function 到底是什么关系？">
+                <i class="fa fa-chevron-left"></i> js 原型的问题 Object 和 Function 到底是什么关系？
               </a>
             
           </div>
@@ -524,10 +521,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/20/5月20日前端知识每日积累/" rel="prev" title="5月20日前端知识每日积累">
-                5月20日前端知识每日积累 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -684,7 +677,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面试题每日积累"><span class="nav-number">1.</span> <span class="nav-text">面试题每日积累</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#052"><span class="nav-number">1.1.</span> <span class="nav-text">052</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS不同选择器的权重-CSS层叠的规则"><span class="nav-number">1.2.</span> <span class="nav-text">CSS不同选择器的权重(CSS层叠的规则)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#053"><span class="nav-number">1.3.</span> <span class="nav-text">053</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列出你所知道可以改变页面布局的属性"><span class="nav-number">1.4.</span> <span class="nav-text">列出你所知道可以改变页面布局的属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#054"><span class="nav-number">1.5.</span> <span class="nav-text">054</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS在性能优化方面的实践"><span class="nav-number">1.6.</span> <span class="nav-text">CSS在性能优化方面的实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#055"><span class="nav-number">1.7.</span> <span class="nav-text">055</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3动画（简单动画的实现，如旋转等）"><span class="nav-number">1.8.</span> <span class="nav-text">CSS3动画（简单动画的实现，如旋转等）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#056"><span class="nav-number">1.9.</span> <span class="nav-text">056</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#base64的原理及优缺点"><span class="nav-number">1.10.</span> <span class="nav-text">base64的原理及优缺点</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一种——调用localStorage"><span class="nav-number">1.</span> <span class="nav-text">第一种——调用localStorage</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在一个标签页里面使用-localStorage-setItem-key-value-添加（修改、删除）内容；在另一个标签页里面监听-storage-事件。即可得到-localstorge-存储的值，实现不同标签页之间的通信。"><span class="nav-number">1.1.</span> <span class="nav-text">在一个标签页里面使用 localStorage.setItem(key,value)添加（修改、删除）内容；在另一个标签页里面监听 storage 事件。即可得到 localstorge 存储的值，实现不同标签页之间的通信。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二种——调用cookie-setInterval"><span class="nav-number">2.</span> <span class="nav-text">第二种——调用cookie+setInterval()</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#将要传递的信息存储在cookie中，每隔一定时间读取cookie信息，即可随时获取要传递的信息。"><span class="nav-number">2.1.</span> <span class="nav-text">将要传递的信息存储在cookie中，每隔一定时间读取cookie信息，即可随时获取要传递的信息。</span></a></li></ol></li></ol></div>
             
 
           </div>
