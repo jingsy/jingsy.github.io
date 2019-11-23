@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-center-circle.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,Vue,组件通信,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="VUE 组件通信公司用的是vue，刚入职熟悉代码时在公司里把vue又总结了一下 1. 父到子组件通信A. props直接注册1.在子组件标签上进行属性绑定 2.在子组件内部的props中进行属性注册     没有在props进行注册的属性会显示在行间里，所以我们设置 inheritAttrs:false 3.v-bind = &amp;quot;$attrs&amp;quot; 可以直接讲attrs里包含的所有属">
+<meta name="keywords" content="js,Vue,组件通信">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue 组件通信">
+<meta property="og:url" content="https://jingshuyan.com/2019/11/23/11月23日Vue组件通信/index.html">
+<meta property="og:site_name" content="拉斐尔">
+<meta property="og:description" content="VUE 组件通信公司用的是vue，刚入职熟悉代码时在公司里把vue又总结了一下 1. 父到子组件通信A. props直接注册1.在子组件标签上进行属性绑定 2.在子组件内部的props中进行属性注册     没有在props进行注册的属性会显示在行间里，所以我们设置 inheritAttrs:false 3.v-bind = &amp;quot;$attrs&amp;quot; 可以直接讲attrs里包含的所有属">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-23T08:46:50.979Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue 组件通信">
+<meta name="twitter:description" content="VUE 组件通信公司用的是vue，刚入职熟悉代码时在公司里把vue又总结了一下 1. 父到子组件通信A. props直接注册1.在子组件标签上进行属性绑定 2.在子组件内部的props中进行属性注册     没有在props进行注册的属性会显示在行间里，所以我们设置 inheritAttrs:false 3.v-bind = &amp;quot;$attrs&amp;quot; 可以直接讲attrs里包含的所有属">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://jingshuyan.com/2019/11/23/11月23日Vue组件通信/">
+
+
+
+
+
+  <title>Vue 组件通信 | 拉斐尔</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?96a40d8e25d8dd0b327659375cc69416";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">拉斐尔</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">守得云开见月明</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jingshuyan.com/2019/11/23/11月23日Vue组件通信/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shuyan Jing">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://5b0988e595225.cdn.sohucs.com/images/20190128/8bced637a7c447348e7d6d6d04f6a3bb.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="拉斐尔">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Vue 组件通信</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-23T16:35:25+08:00">
+                2019-11-23
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-11-23T16:46:50+08:00">
+                2019-11-23
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="VUE-组件通信"><a href="#VUE-组件通信" class="headerlink" title="VUE 组件通信"></a>VUE 组件通信</h1><p>公司用的是vue，刚入职熟悉代码时在公司里把vue又总结了一下</p>
+<h3 id="1-父到子组件通信"><a href="#1-父到子组件通信" class="headerlink" title="1. 父到子组件通信"></a>1. 父到子组件通信</h3><h4 id="A-props直接注册"><a href="#A-props直接注册" class="headerlink" title="A. props直接注册"></a>A. <strong>props直接注册</strong></h4><pre><code>1.在子组件标签上进行属性绑定
+2.在子组件内部的props中进行属性注册
+    没有在props进行注册的属性会显示在行间里，所以我们设置
+inheritAttrs:false
+3.v-bind = &quot;$attrs&quot; 可以直接讲attrs里包含的所有属性直接传值
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">           el: <span class="string">'#app'</span>,</span><br><span class="line">           <span class="comment">//过一遍流程</span></span><br><span class="line">           data: &#123;</span><br><span class="line">               content:<span class="string">'这是内容'</span>,</span><br><span class="line">               title:<span class="string">'这是标题'</span></span><br><span class="line">           &#125;,</span><br><span class="line">           <span class="comment">// 定义局部组件</span></span><br><span class="line">           components: &#123;</span><br><span class="line">               myContent:&#123;</span><br><span class="line">                   template:<span class="string">`&lt;div&gt;&lt;h3&gt;&#123;&#123; title &#125;&#125; &lt;/h3&gt;</span></span><br><span class="line"><span class="string">                   &lt;/div&gt;`</span>,</span><br><span class="line">                   created() &#123;</span><br><span class="line">                       <span class="built_in">console</span>.log(<span class="keyword">this</span>.$parent)</span><br><span class="line">                       <span class="keyword">this</span>.title = <span class="keyword">this</span>.$parent.title;</span><br><span class="line">                   &#125;,</span><br><span class="line">                   components:&#123;</span><br><span class="line">                       myP:&#123;</span><br><span class="line">                           props:[<span class="string">'content'</span>],</span><br><span class="line">                           template:<span class="string">'&lt;div&gt;&#123;&#123; content &#125;&#125;&lt;/div&gt;'</span></span><br><span class="line">                       &#125;</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="B-parent"><a href="#B-parent" class="headerlink" title="B. $parent"></a>B. <strong>$parent</strong></h4><pre><code>子组件中使用this.$parent可以直接拿到父组件实例
+</code></pre><h4 id="C-refs"><a href="#C-refs" class="headerlink" title="C.$refs"></a>C.<strong>$refs</strong></h4><pre><code>1.this.refs拿到这个引用  
+</code></pre><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">"dom"</span>&gt;</span> hi <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后在组件中使用:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$refs.dom -- &gt; 拿到原生dom，</span><br></pre></td></tr></table></figure></p>
+<pre><code>2.你不能给多个dom设置引用 前面的会被后面覆盖 
+but 你通过3.v-for设置的引用 会返回一个数组
+4.也可以放在组件上，会返回组件实例，
+</code></pre><p>我们就可以干事了 调用组件上的属性或者方法<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$refs.cmp.msg</span><br></pre></td></tr></table></figure></p>
+<h4 id="D-provide-amp-inject"><a href="#D-provide-amp-inject" class="headerlink" title="D.provide &amp; inject"></a>D.<strong>provide &amp; inject</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">provide: &#123;</span><br><span class="line">                msg: <span class="string">'helloworld'</span>,</span><br><span class="line">                content: <span class="string">'这是cotent'</span></span><br><span class="line">            &#125;,</span><br><span class="line">components: &#123;</span><br><span class="line">                myContent: &#123;</span><br><span class="line">                    <span class="comment">//注入传家宝</span></span><br><span class="line">                    inject:[<span class="string">'msg'</span>],</span><br><span class="line">                 </span><br><span class="line">                    template: <span class="string">`&lt;div&gt; 儿子： &#123;&#123; msg &#125;&#125;</span></span><br><span class="line"><span class="string">                        &lt;my-p&gt;&lt;/my-p&gt;</span></span><br><span class="line"><span class="string">                        &lt;/div&gt;`</span>,</span><br><span class="line">                    components: &#123;</span><br><span class="line"></span><br><span class="line">                        myP: &#123;</span><br><span class="line">                            inject:[<span class="string">'content'</span>],</span><br><span class="line">                            template: <span class="string">`&lt;p&gt;孙子：&#123;&#123;content&#125;&#125;&lt;/p&gt;`</span>,</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-父到子组件通信"><a href="#2-父到子组件通信" class="headerlink" title="2. 父到子组件通信"></a>2. 父到子组件通信</h3><h4 id="A-listeners"><a href="#A-listeners" class="headerlink" title="A.$listeners"></a>A.$listeners</h4><pre><code>通过$listeners，该指令包含了父作用域中的 (不含 .native 修饰器的)
+v-on 事件监听器。它可以通过 v-on=”$listeners” 
+传入内部组件——在创建更高层次的组件时非常有用。
+</code></pre><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">父组件 Parent.vue</span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        I am Parent</span><br><span class="line">        Son: <span class="tag">&lt;<span class="name">Son</span> @<span class="attr">click</span>=<span class="string">"func"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> Son <span class="keyword">from</span> <span class="string">'./Son'</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">    components:&#123;</span></span><br><span class="line"><span class="undefined">        Son</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    methods:&#123;</span></span><br><span class="line"><span class="undefined">        func(data)&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(data,<span class="string">'hi'</span>);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">子组件  Son.vue</span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span> iam son</span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"handleClick"</span>&gt;</span>click me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">    methods:&#123;</span></span><br><span class="line"><span class="undefined">        handleClick()&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$listeners.click()); <span class="comment">//hi 父组件内的func函数被触发</span></span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$listeners.click(<span class="string">'hi from son'</span>)); <span class="comment">//hi from son,hi 父组件内的func函数被触发，并且’hi from son‘ 被传递到了父组件的func函数里</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="B-emit"><a href="#B-emit" class="headerlink" title="B.$emit"></a>B.$emit</h4><pre><code>在此父组件里，@click=&quot;func&quot;必须加上 .native, 点击事件才会被触发，
+如果我们不加.native, 组件的点击事件就不知道什么时候被触发，
+因为这个不是原生组件，因此，$emit用来解决这个问题，
+就好比：一个孩子不哭，你拧他一下他才会哭，
+比如：我们在子组件里使用$emit来触发外面的点击事件，
+父组件里进行点击事件监听
+</code></pre><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">父组件 Parent.vue</span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        I am Parent</span><br><span class="line">        Son: <span class="tag">&lt;<span class="name">Son</span> @<span class="attr">click</span>=<span class="string">"func"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> Son <span class="keyword">from</span> <span class="string">'./Son'</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">    components:&#123;</span></span><br><span class="line"><span class="undefined">        Son</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    methods:&#123;</span></span><br><span class="line"><span class="undefined">        func(data)&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(data,<span class="string">'hi'</span>);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">```HTML</span><br><span class="line">子组件  Son.vue</span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span> iam son</span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"handleClick"</span>&gt;</span>click me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on</span>=<span class="string">"$listeners"</span>&gt;</span>click me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 如上，这样就把父组件所有的监听事件绑定在button上了 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">    methods:&#123;</span></span><br><span class="line"><span class="undefined">        handleClick()&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$emit(<span class="string">'click'</span>)); <span class="comment">//主动触发父组件上的事件</span></span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$emit(<span class="string">'click'</span>,<span class="string">'HI'</span>)); <span class="comment">//第二个参数为你想传入父组件函数的参数</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="补充：类似于-v-bind-’’-attrs’’，-我们还有v-on-”-listeners”-它可以把外面组件上所有的v-on事件绑定在一起-如：把父组件上所有的v-on事件-都绑定在子组件的button上"><a href="#补充：类似于-v-bind-’’-attrs’’，-我们还有v-on-”-listeners”-它可以把外面组件上所有的v-on事件绑定在一起-如：把父组件上所有的v-on事件-都绑定在子组件的button上" class="headerlink" title="补充：类似于 v-bind =’’\$attrs’’， 我们还有v-on=”\$listeners”,它可以把外面组件上所有的v-on事件绑定在一起 如：把父组件上所有的v-on事件 都绑定在子组件的button上"></a>补充：类似于 v-bind =’’\$attrs’’， 我们还有v-on=”\$listeners”,它可以把外面组件上所有的v-on事件绑定在一起 如：把父组件上所有的v-on事件 都绑定在子组件的button上</h3><h3 id="不仅仅是click这种函数系统自带的事件，-listener可以监听自定义事件，-emit可以触发自定义事件"><a href="#不仅仅是click这种函数系统自带的事件，-listener可以监听自定义事件，-emit可以触发自定义事件" class="headerlink" title="不仅仅是click这种函数系统自带的事件，\$listener可以监听自定义事件，\$emit可以触发自定义事件"></a>不仅仅是click这种函数系统自带的事件，\$listener可以监听自定义事件，\$emit可以触发自定义事件</h3><h4 id="C-children"><a href="#C-children" class="headerlink" title="C.$children"></a>C.$children</h4><pre><code>很简单，父组件里使用 this.$children, 但一般不推荐使用
+</code></pre><h3 id="3-Event-Bus-事件总线"><a href="#3-Event-Bus-事件总线" class="headerlink" title="3. Event Bus 事件总线"></a>3. Event Bus 事件总线</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+     
+      <div>
+     <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+     </div>
+     
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Shuyan Jing 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="Shuyan Jing 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Shuyan Jing
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://jingshuyan.com/2019/11/23/11月23日Vue组件通信/" title="Vue 组件通信">https://jingshuyan.com/2019/11/23/11月23日Vue组件通信/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
+          
+            <a href="/tags/组件通信/" rel="tag"># 组件通信</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/02/10月2日promise、async和await之执行顺序的那点事/" rel="next" title="promise、async和await之执行顺序的那点事">
+                <i class="fa fa-chevron-left"></i> promise、async和await之执行顺序的那点事
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzY2Mi8yMDIwMQ=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://5b0988e595225.cdn.sohucs.com/images/20190128/8bced637a7c447348e7d6d6d04f6a3bb.jpeg" alt="Shuyan Jing">
+            
+              <p class="site-author-name" itemprop="name">Shuyan Jing</p>
+              <p class="site-description motion-element" itemprop="description">自学前端的小白 弟中弟</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jingsy" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:pddbreeze@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="52" src="//music.163.com/outchain/player?type=0&id=2734919766&auto=1&height=32"></iframe>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#VUE-组件通信"><span class="nav-number">1.</span> <span class="nav-text">VUE 组件通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-父到子组件通信"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 父到子组件通信</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#A-props直接注册"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">A. props直接注册</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#B-parent"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">B. $parent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-refs"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">C.$refs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#D-provide-amp-inject"><span class="nav-number">1.0.1.4.</span> <span class="nav-text">D.provide &amp; inject</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-父到子组件通信"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 父到子组件通信</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#A-listeners"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">A.$listeners</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#B-emit"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">B.$emit</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充：类似于-v-bind-’’-attrs’’，-我们还有v-on-”-listeners”-它可以把外面组件上所有的v-on事件绑定在一起-如：把父组件上所有的v-on事件-都绑定在子组件的button上"><span class="nav-number">1.0.3.</span> <span class="nav-text">补充：类似于 v-bind =’’\$attrs’’， 我们还有v-on=”\$listeners”,它可以把外面组件上所有的v-on事件绑定在一起 如：把父组件上所有的v-on事件 都绑定在子组件的button上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不仅仅是click这种函数系统自带的事件，-listener可以监听自定义事件，-emit可以触发自定义事件"><span class="nav-number">1.0.4.</span> <span class="nav-text">不仅仅是click这种函数系统自带的事件，\$listener可以监听自定义事件，\$emit可以触发自定义事件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C-children"><span class="nav-number">1.0.4.1.</span> <span class="nav-text">C.$children</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Event-Bus-事件总线"><span class="nav-number">1.0.5.</span> <span class="nav-text">3. Event Bus 事件总线</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shuyan Jing</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">17.2k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
