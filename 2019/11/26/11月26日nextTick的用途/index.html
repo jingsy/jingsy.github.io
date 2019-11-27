@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="前端,JavaScript,">
+  <meta name="keywords" content="js,Vue,组件通信,">
 
 
 
@@ -86,18 +86,20 @@
 
 
 
-<meta name="description" content="继承混入式继承for in 使用for in 遍历对象的属性，将所有的属性添加到另外一个对象上 这时候就可以称 对象2 继承自 对象1 原型继承利用对象的动态特性，为原型对象添加成员 直接替换原型对象    1.替换前的对象在替换之后所有成员都丢失了    2.替换原型对象的时候需要手动去指定将要替换的原型对象 指定constructor 利用混入给原型对象添加成员 经典继承1var 对象1 =">
-<meta name="keywords" content="前端,JavaScript">
+<meta name="description" content="nextTick的用途 应用场景：需要在视图更新之后，基于新的视图进行操作。12345```html&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;  &amp;lt;input ref=&amp;quot;input&amp;quot; v-show=&amp;quot;inputShow&amp;quot;&amp;gt;  &amp;lt;button @click=&amp;quot;show&amp;quot;&amp;gt;show&amp;lt;/butto">
+<meta name="keywords" content="js,Vue,组件通信">
 <meta property="og:type" content="article">
-<meta property="og:title" content="4月14日下午js学习总结">
-<meta property="og:url" content="https://jingshuyan.com/2019/04/14/4月14日下午/index.html">
+<meta property="og:title" content="11月26日nextTick的用途">
+<meta property="og:url" content="https://jingshuyan.com/2019/11/26/11月26日nextTick的用途/index.html">
 <meta property="og:site_name" content="拉斐尔">
-<meta property="og:description" content="继承混入式继承for in 使用for in 遍历对象的属性，将所有的属性添加到另外一个对象上 这时候就可以称 对象2 继承自 对象1 原型继承利用对象的动态特性，为原型对象添加成员 直接替换原型对象    1.替换前的对象在替换之后所有成员都丢失了    2.替换原型对象的时候需要手动去指定将要替换的原型对象 指定constructor 利用混入给原型对象添加成员 经典继承1var 对象1 =">
+<meta property="og:description" content="nextTick的用途 应用场景：需要在视图更新之后，基于新的视图进行操作。12345```html&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;  &amp;lt;input ref=&amp;quot;input&amp;quot; v-show=&amp;quot;inputShow&amp;quot;&amp;gt;  &amp;lt;button @click=&amp;quot;show&amp;quot;&amp;gt;show&amp;lt;/butto">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-14T07:34:18.000Z">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575430114&di=758286cc08a4bd6388bf8d3e63ae5b96&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.uimaker.com%2Fuploads%2Fallimg%2F120723%2F1_120723005918_1.png">
+<meta property="og:updated_time" content="2019-11-27T04:51:21.095Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="4月14日下午js学习总结">
-<meta name="twitter:description" content="继承混入式继承for in 使用for in 遍历对象的属性，将所有的属性添加到另外一个对象上 这时候就可以称 对象2 继承自 对象1 原型继承利用对象的动态特性，为原型对象添加成员 直接替换原型对象    1.替换前的对象在替换之后所有成员都丢失了    2.替换原型对象的时候需要手动去指定将要替换的原型对象 指定constructor 利用混入给原型对象添加成员 经典继承1var 对象1 =">
+<meta name="twitter:title" content="11月26日nextTick的用途">
+<meta name="twitter:description" content="nextTick的用途 应用场景：需要在视图更新之后，基于新的视图进行操作。12345```html&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;  &amp;lt;input ref=&amp;quot;input&amp;quot; v-show=&amp;quot;inputShow&amp;quot;&amp;gt;  &amp;lt;button @click=&amp;quot;show&amp;quot;&amp;gt;show&amp;lt;/butto">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575430114&di=758286cc08a4bd6388bf8d3e63ae5b96&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.uimaker.com%2Fuploads%2Fallimg%2F120723%2F1_120723005918_1.png">
 
 
 
@@ -127,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="https://jingshuyan.com/2019/04/14/4月14日下午/">
+  <link rel="canonical" href="https://jingshuyan.com/2019/11/26/11月26日nextTick的用途/">
 
 
 
 
 
-  <title>4月14日下午js学习总结 | 拉斐尔</title>
+  <title>11月26日nextTick的用途 | 拉斐尔</title>
   
 
 
@@ -280,7 +282,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://jingshuyan.com/2019/04/14/4月14日下午/">
+    <link itemprop="mainEntityOfPage" href="https://jingshuyan.com/2019/11/26/11月26日nextTick的用途/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shuyan Jing">
@@ -297,7 +299,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">4月14日下午js学习总结</h1>
+          <h1 class="post-title" itemprop="name headline">11月26日nextTick的用途</h1>
         
 
         <div class="post-meta">
@@ -309,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-14T17:22:42+08:00">
-                2019-04-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-26T12:51:35+08:00">
+                2019-11-26
               </time>
             
 
@@ -325,8 +327,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-04-14T15:34:18+08:00">
-                2019-04-14
+              <time title="更新于" itemprop="dateModified" datetime="2019-11-27T12:51:21+08:00">
+                2019-11-27
               </time>
             
           </span>
@@ -344,8 +346,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/前端-Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">前端 Vue</span>
                   </a>
                 </span>
 
@@ -380,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  930
+                  288
                 </span>
               
 
@@ -396,7 +398,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  1
                 </span>
               
             </div>
@@ -417,63 +419,12 @@
       
 
       
-        <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><h3 id="混入式继承"><a href="#混入式继承" class="headerlink" title="混入式继承"></a>混入式继承</h3><pre><code>for in
-使用for in 遍历对象的属性，将所有的属性添加到另外一个对象上
-这时候就可以称 对象2 继承自 对象1
-</code></pre><h3 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h3><pre><code>利用对象的动态特性，为原型对象添加成员
-直接替换原型对象
-   1.替换前的对象在替换之后所有成员都丢失了
-   2.替换原型对象的时候需要手动去指定将要替换的原型对象 指定constructor
-利用混入给原型对象添加成员
-</code></pre><h3 id="经典继承"><a href="#经典继承" class="headerlink" title="经典继承"></a>经典继承</h3><pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 对象<span class="number">1</span> = <span class="built_in">Object</span>.create(对象<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-
-    这个时候创建出来的对象继承自对象2
-
-    Object.create存在兼容性问题
-    如何解决？
-    解决方法：
-        1.首先监测浏览器是否支持Object.create()如果不支持,则手动添加
-        2.自定义函数，在函数内部判断浏览器是否支持Object.create(),如果不支持则手动创建对象返回，如果支持，则直接调用
-
-        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">create</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">Object</span>.create)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">Object</span>.create(obj);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">		F.prototype = obj;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> F();	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><h3 id="什么是原型链"><a href="#什么是原型链" class="headerlink" title="什么是原型链"></a>什么是原型链</h3><pre><code>每个构造函数都有原型对象，每个对象都有构造函数，
-每个构造函数的原型对象都是对象，也就有构造函数，
-然后就形成了一个链式的结构
-</code></pre><h3 id="原型继承是什么"><a href="#原型继承是什么" class="headerlink" title="原型继承是什么"></a>原型继承是什么</h3><pre><code>通过修改原型链的结构，实现继承的方式
-</code></pre><h3 id="对象和原型的成员关系"><a href="#对象和原型的成员关系" class="headerlink" title="对象和原型的成员关系"></a>对象和原型的成员关系</h3><pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
-
-p对象包含的成员有：Person.prototype中的成员 和自身拥有的成员
-Person.prototype拥有的成员有：Object.prototype的成员和自身的成员
-
-所以：p对象可以访问 Person.prototype 和 Object.prototype 中的所有成员
-</code></pre><h3 id="Object-prototype的成员"><a href="#Object-prototype的成员" class="headerlink" title="Object.prototype的成员"></a>Object.prototype的成员</h3><pre><code>* constructor:指向和该原型相关的构造函数
-* hasOwnProperty 方法：判断对象本身是否拥有某个属性
-* properIsEnumerable 方法：1.判断属性是否属于对象本身，以及判断属性是否可以被遍历
-* toString toLocaleString: 将对象转换为字符串
-toLocaleString 转换为字符串的时候 应用的是本地的设置格式
-* valueOf 方法： 在对象参与运算的时候， 首先调用valueOf方法获取对象的值，如果该值无法参与运算，将会调用出toString方法
-* __proto__ 属性：指向当前对象的原型对象
-</code></pre><h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><pre><code>可以用Function来创建函数
-</code></pre><h3 id="三种方式"><a href="#三种方式" class="headerlink" title="三种方式"></a>三种方式</h3><pre><code>    * 直接申明函数
-    * 函数表达式
-    * new Function（）
-
-可以用Function来创建函数
-语法：
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 函数名 = <span class="keyword">new</span> <span class="built_in">Function</span>(); <span class="comment">//创建一个空的函数</span></span><br><span class="line"><span class="keyword">var</span> 函数名 = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"函数体"</span>); <span class="comment">//创建一个没有参数的函数</span></span><br><span class="line"><span class="keyword">var</span> 函数名 = <span class="keyword">new</span> <span class="built_in">Function</span>(“参数<span class="number">1</span><span class="string">",“参数2"</span>,函数体<span class="string">"); //当给function传多个参数的时候，最后一个参数为函数体，前面参数为创建出的这个参数的形参</span></span><br><span class="line"><span class="string">//function接受的所有参数都是字符串类型的</span></span><br></pre></td></tr></table></figure>
-</code></pre><h2 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h2><pre><code>arguments对象是函数内部的一个对象，调用时候，函数会把所有的参数存入该对象
-注意：不管有没有形参，实参都会被存入该对象
-</code></pre><h2 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h2><pre><code>可以将字符串转换为js代码并执行
-
-注意： 当使用eval解析JSON格式字符串的时候
-1.可以在JSON格式字符串前面拼接 “var 变量名 =”
-如：    eval(&quot;var 变量名=&quot; +json格式的字符串)
-
-2.可以在JSON格式字符串前后拼接（）
-    eval(&quot;(&quot;+JSON格式字符串+&quot;)&quot;)
-</code></pre><h2 id="静态成员和实例成员"><a href="#静态成员和实例成员" class="headerlink" title="静态成员和实例成员"></a>静态成员和实例成员</h2><h3 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h3><pre><code>是指构造函数的属性和方法
-</code></pre><h3 id="实例成员"><a href="#实例成员" class="headerlink" title="实例成员"></a>实例成员</h3><pre><code>是指实例的属性和方法
-</code></pre>
+        <h2 id="nextTick的用途"><a href="#nextTick的用途" class="headerlink" title="nextTick的用途"></a><code>nextTick的用途</code></h2><p><a href><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1575430114&amp;di=758286cc08a4bd6388bf8d3e63ae5b96&amp;imgtype=jpg&amp;er=1&amp;src=http%3A%2F%2Fwww.uimaker.com%2Fuploads%2Fallimg%2F120723%2F1_120723005918_1.png" alt="nextTick的用途"></a></p>
+<h2 id="应用场景：需要在视图更新之后，基于新的视图进行操作。"><a href="#应用场景：需要在视图更新之后，基于新的视图进行操作。" class="headerlink" title="应用场景：需要在视图更新之后，基于新的视图进行操作。"></a>应用场景：需要在视图更新之后，基于新的视图进行操作。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```html</span><br><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;input ref=&quot;input&quot; v-show=&quot;inputShow&quot;&gt;</span><br><span class="line">  &lt;button @click=&quot;show&quot;&gt;show&lt;/button&gt;  </span><br><span class="line"> &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">```js</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &quot;#app&quot;,</span><br><span class="line">  data() &#123;</span><br><span class="line">   return &#123;</span><br><span class="line">     inputShow: false</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    show() &#123;</span><br><span class="line">      this.inputShow = true</span><br><span class="line">      this.$nextTick(() =&gt; &#123;</span><br><span class="line">        this.$refs.input.focus()</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>上述代码里，我们会发现直接调用        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">由于vue是异步更新视图的，所以我们在改变dom后无法马上使用</span><br><span class="line"></span><br><span class="line">```vue 官方的话:</span><br></pre></td></tr></table></figure></p>
+<p>Vue 异步执行 DOM 更新。只要观察到数据变化，Vue 将开启一个队列，并缓冲在同一事件循环中发生的所有数据改变。如果同一个 watcher 被多次触发，只会被推入到队列中一次。这种在缓冲时去除重复数据对于避免不必要的计算和 DOM 操作上非常重要显然。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.js在修改数据的时候，不会立马修改数据，而是要等同一事件轮询的数据都更新完之后，再统一进行视图更新。</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -534,7 +485,7 @@ toLocaleString 转换为字符串的时候 应用的是本地的设置格式
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://jingshuyan.com/2019/04/14/4月14日下午/" title="4月14日下午js学习总结">https://jingshuyan.com/2019/04/14/4月14日下午/</a>
+    <a href="https://jingshuyan.com/2019/11/26/11月26日nextTick的用途/" title="11月26日nextTick的用途">https://jingshuyan.com/2019/11/26/11月26日nextTick的用途/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -549,9 +500,11 @@ toLocaleString 转换为字符串的时候 应用的是本地的设置格式
       
         <div class="post-tags">
           
-            <a href="/tags/前端/" rel="tag"># 前端</a>
+            <a href="/tags/js/" rel="tag"># js</a>
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
+          
+            <a href="/tags/组件通信/" rel="tag"># 组件通信</a>
           
         </div>
       
@@ -564,8 +517,8 @@ toLocaleString 转换为字符串的时候 应用的是本地的设置格式
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/13/4月13日上午js学习总结/" rel="next" title="4月13日上午js学习总结">
-                <i class="fa fa-chevron-left"></i> 4月13日上午js学习总结
+              <a href="/2019/11/23/11月23日Vue组件通信/" rel="next" title="Vue 组件通信">
+                <i class="fa fa-chevron-left"></i> Vue 组件通信
               </a>
             
           </div>
@@ -573,10 +526,6 @@ toLocaleString 转换为字符串的时候 应用的是本地的设置格式
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/14/4月14日面向对象复习/" rel="prev" title="4月14日面向对象复习">
-                4月14日面向对象复习 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -733,7 +682,7 @@ toLocaleString 转换为字符串的时候 应用的是本地的设置格式
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">1.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#混入式继承"><span class="nav-number">1.1.</span> <span class="nav-text">混入式继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型继承"><span class="nav-number">1.2.</span> <span class="nav-text">原型继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#经典继承"><span class="nav-number">1.3.</span> <span class="nav-text">经典继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链"><span class="nav-number">2.</span> <span class="nav-text">原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是原型链"><span class="nav-number">2.1.</span> <span class="nav-text">什么是原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型继承是什么"><span class="nav-number">2.2.</span> <span class="nav-text">原型继承是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象和原型的成员关系"><span class="nav-number">2.3.</span> <span class="nav-text">对象和原型的成员关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-prototype的成员"><span class="nav-number">2.4.</span> <span class="nav-text">Object.prototype的成员</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function"><span class="nav-number">3.</span> <span class="nav-text">Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三种方式"><span class="nav-number">3.1.</span> <span class="nav-text">三种方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arguments"><span class="nav-number">4.</span> <span class="nav-text">arguments</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eval"><span class="nav-number">5.</span> <span class="nav-text">eval</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态成员和实例成员"><span class="nav-number">6.</span> <span class="nav-text">静态成员和实例成员</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态成员"><span class="nav-number">6.1.</span> <span class="nav-text">静态成员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例成员"><span class="nav-number">6.2.</span> <span class="nav-text">实例成员</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#nextTick的用途"><span class="nav-number">1.</span> <span class="nav-text">nextTick的用途</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场景：需要在视图更新之后，基于新的视图进行操作。"><span class="nav-number">2.</span> <span class="nav-text">应用场景：需要在视图更新之后，基于新的视图进行操作。</span></a></li></ol></div>
             
 
           </div>
