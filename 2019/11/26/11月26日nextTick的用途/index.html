@@ -86,19 +86,19 @@
 
 
 
-<meta name="description" content="nextTick的用途 应用场景：需要在视图更新之后，基于新的视图进行操作。12345```html&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;  &amp;lt;input ref=&amp;quot;input&amp;quot; v-show=&amp;quot;inputShow&amp;quot;&amp;gt;  &amp;lt;button @click=&amp;quot;show&amp;quot;&amp;gt;show&amp;lt;/butto">
+<meta name="description" content="nextTick的用途 应用场景：需要在视图更新之后，基于新的视图进行操作。html代码 1234&amp;lt;div id=&quot;app&quot;&amp;gt;  &amp;lt;input ref=&quot;input&quot; v-show=&quot;inputShow&quot;&amp;gt;  &amp;lt;button @click=&quot;show&quot;&amp;gt;show&amp;lt;/button&amp;gt;   &amp;lt;/div&amp;gt; js代码 123456789101112">
 <meta name="keywords" content="js,Vue,组件通信">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nextTick的用途">
 <meta property="og:url" content="https://jingshuyan.com/2019/11/26/11月26日nextTick的用途/index.html">
 <meta property="og:site_name" content="拉斐尔">
-<meta property="og:description" content="nextTick的用途 应用场景：需要在视图更新之后，基于新的视图进行操作。12345```html&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;  &amp;lt;input ref=&amp;quot;input&amp;quot; v-show=&amp;quot;inputShow&amp;quot;&amp;gt;  &amp;lt;button @click=&amp;quot;show&amp;quot;&amp;gt;show&amp;lt;/butto">
+<meta property="og:description" content="nextTick的用途 应用场景：需要在视图更新之后，基于新的视图进行操作。html代码 1234&amp;lt;div id=&quot;app&quot;&amp;gt;  &amp;lt;input ref=&quot;input&quot; v-show=&quot;inputShow&quot;&amp;gt;  &amp;lt;button @click=&quot;show&quot;&amp;gt;show&amp;lt;/button&amp;gt;   &amp;lt;/div&amp;gt; js代码 123456789101112">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575430114&di=758286cc08a4bd6388bf8d3e63ae5b96&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.uimaker.com%2Fuploads%2Fallimg%2F120723%2F1_120723005918_1.png">
-<meta property="og:updated_time" content="2019-11-27T04:53:20.600Z">
+<meta property="og:updated_time" content="2019-11-27T04:55:55.668Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nextTick的用途">
-<meta name="twitter:description" content="nextTick的用途 应用场景：需要在视图更新之后，基于新的视图进行操作。12345```html&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;  &amp;lt;input ref=&amp;quot;input&amp;quot; v-show=&amp;quot;inputShow&amp;quot;&amp;gt;  &amp;lt;button @click=&amp;quot;show&amp;quot;&amp;gt;show&amp;lt;/butto">
+<meta name="twitter:description" content="nextTick的用途 应用场景：需要在视图更新之后，基于新的视图进行操作。html代码 1234&amp;lt;div id=&quot;app&quot;&amp;gt;  &amp;lt;input ref=&quot;input&quot; v-show=&quot;inputShow&quot;&amp;gt;  &amp;lt;button @click=&quot;show&quot;&amp;gt;show&amp;lt;/button&amp;gt;   &amp;lt;/div&amp;gt; js代码 123456789101112">
 <meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575430114&di=758286cc08a4bd6388bf8d3e63ae5b96&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.uimaker.com%2Fuploads%2Fallimg%2F120723%2F1_120723005918_1.png">
 
 
@@ -327,7 +327,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-11-27T12:53:20+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-11-27T12:55:55+08:00">
                 2019-11-27
               </time>
             
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  288
+                  308
                 </span>
               
 
@@ -420,10 +420,13 @@
 
       
         <h2 id="nextTick的用途"><a href="#nextTick的用途" class="headerlink" title="nextTick的用途"></a><code>nextTick的用途</code></h2><p><a href><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1575430114&amp;di=758286cc08a4bd6388bf8d3e63ae5b96&amp;imgtype=jpg&amp;er=1&amp;src=http%3A%2F%2Fwww.uimaker.com%2Fuploads%2Fallimg%2F120723%2F1_120723005918_1.png" alt="nextTick的用途"></a></p>
-<h2 id="应用场景：需要在视图更新之后，基于新的视图进行操作。"><a href="#应用场景：需要在视图更新之后，基于新的视图进行操作。" class="headerlink" title="应用场景：需要在视图更新之后，基于新的视图进行操作。"></a>应用场景：需要在视图更新之后，基于新的视图进行操作。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```html</span><br><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;input ref=&quot;input&quot; v-show=&quot;inputShow&quot;&gt;</span><br><span class="line">  &lt;button @click=&quot;show&quot;&gt;show&lt;/button&gt;  </span><br><span class="line"> &lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">```js</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &quot;#app&quot;,</span><br><span class="line">  data() &#123;</span><br><span class="line">   return &#123;</span><br><span class="line">     inputShow: false</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    show() &#123;</span><br><span class="line">      this.inputShow = true</span><br><span class="line">      this.$nextTick(() =&gt; &#123;</span><br><span class="line">        this.$refs.input.focus()</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>上述代码里，我们会发现直接调用        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">由于vue是异步更新视图的，所以我们在改变dom后无法马上使用</span><br><span class="line"></span><br><span class="line">```vue 官方的话:</span><br></pre></td></tr></table></figure></p>
-<p>Vue 异步执行 DOM 更新。只要观察到数据变化，Vue 将开启一个队列，并缓冲在同一事件循环中发生的所有数据改变。如果同一个 watcher 被多次触发，只会被推入到队列中一次。这种在缓冲时去除重复数据对于避免不必要的计算和 DOM 操作上非常重要显然。</p>
+<h2 id="应用场景：需要在视图更新之后，基于新的视图进行操作。"><a href="#应用场景：需要在视图更新之后，基于新的视图进行操作。" class="headerlink" title="应用场景：需要在视图更新之后，基于新的视图进行操作。"></a>应用场景：需要在视图更新之后，基于新的视图进行操作。</h2><p><code>html代码</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">ref</span>=<span class="string">"input"</span> <span class="attr">v-show</span>=<span class="string">"inputShow"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"show"</span>&gt;</span>show<span class="tag">&lt;/<span class="name">button</span>&gt;</span>  </span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>js代码</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#app"</span>,</span><br><span class="line">  data() &#123;</span><br><span class="line">   <span class="keyword">return</span> &#123;</span><br><span class="line">     inputShow: <span class="literal">false</span></span><br><span class="line">   &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    show() &#123;</span><br><span class="line">      <span class="keyword">this</span>.inputShow = <span class="literal">true</span></span><br><span class="line">      <span class="keyword">this</span>.$nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.$refs.input.focus()</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>上述代码里，我们会发现直接调用        <code>this.$refs.input.focus()</code>不会生效，必须使用<code>$nextTick</code>的用途才能立即使用改变后的dom</p>
+<p>由于vue是异步更新视图的，所以我们在改变dom后无法马上使用</p>
+<p><code>vue 官方的话:</code><br>Vue 异步执行 DOM 更新。只要观察到数据变化，Vue 将开启一个队列，并缓冲在同一事件循环中发生的所有数据改变。如果同一个 watcher 被多次触发，只会被推入到队列中一次。这种在缓冲时去除重复数据对于避免不必要的计算和 DOM 操作上非常重要显然。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.js在修改数据的时候，不会立马修改数据，而是要等同一事件轮询的数据都更新完之后，再统一进行视图更新。</span><br></pre></td></tr></table></figure>
       
     </div>
@@ -716,7 +719,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">17.4k</span>
+    <span title="Site words total count">17.5k</span>
   
 </div>
 
